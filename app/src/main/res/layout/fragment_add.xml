@@ -24,7 +24,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:ems="8"
+                android:ems="6"
                 android:textSize="16dp"
                 android:padding="5dp"
                 android:gravity="center"
@@ -42,7 +42,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:ems="8"
+                android:ems="6"
                 android:textSize="16dp"
                 android:padding="5dp"
                 android:gravity="center"
@@ -58,7 +58,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginBottom="20dp">
         <TextView
-            android:id="@+id/txtDate"
+            android:id="@+id/txtDateAdd"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -71,7 +71,7 @@
             android:textSize="17dp"
             android:textStyle="bold" />
         <TextView
-            android:id="@+id/txtTime"
+            android:id="@+id/txtTimeAdd"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"

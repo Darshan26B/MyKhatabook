@@ -12,7 +12,7 @@ class DBHelper(
 
 ) : SQLiteOpenHelper(context,"My KhataBook.db", null, 1) {
 
-    var  Table_name="Trans"
+    var  Table_name="Transa"
     var id= "id"
     var amt="Amount"
     var category="Category"
@@ -20,7 +20,7 @@ class DBHelper(
     var isExpense="isExpense"
 
     override fun onCreate(db: SQLiteDatabase?) {
-            var sql="(CREATE TABLE $Table_name($id INTEGER PRIMARY KEY AUTOINCREMENT,$amt INTEGER,$category TEXT,$note TEXT,$isExpense INTEGER)"
+            var sql="CREATE TABLE $Table_name($id INTEGER PRIMARY KEY AUTOINCREMENT,$amt INTEGER,$category TEXT,$note TEXT,$isExpense INTEGER)"
             db?.execSQL(sql)
     }
 

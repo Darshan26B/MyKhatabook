@@ -1,5 +1,6 @@
 package com.example.mykhatabookproject.Fragment
 
+import android.app.DatePickerDialog
 import android.content.Context
 import android.graphics.Color
 import android.os.Bundle
@@ -7,10 +8,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.DatePicker
 import com.example.mykhatabookproject.DBHelper
 import com.example.mykhatabookproject.R
 import com.example.mykhatabookproject.TransModel
 import com.example.mykhatabookproject.databinding.FragmentAddBinding
+import java.text.SimpleDateFormat
+import java.util.Date
 
 
 class AddFragment : Fragment() {
@@ -23,6 +27,7 @@ class AddFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding=FragmentAddBinding.inflate(layoutInflater)
+
 
         dbHelper= DBHelper(context)
 
@@ -54,6 +59,25 @@ class AddFragment : Fragment() {
             binding.edtAmount.setText("")
             binding.edtCategory.setText("")
             binding.edtNote.setText("")
+        }
+        binding.txtDateAdd.setOnClickListener {
+            var date= Date()
+            var Format= SimpleDateFormat("DD/MM/YYYY")
+            var currentDate=Format.format(date)
+
+            var dates=currentDate.split("/")
+            binding.txtDateAdd.text=currentDate
+
+            var  dialog = DatePickerDialog(requireContext(), object : DatePickerDialog.OnDateSetListener{
+                override fun onDateSet(view: DatePicker?, year: Int, month: Int, dayOfMonth: Int) {
+
+                    var selecteDate ="$dayOfMonth/${(month+1)}/$year"
+                    binding.txtDateAdd.text=selecteDate
+
+                }
+
+            },dates[2].toInt(),dates[1].toInt()-1,dates[0].toInt())
+            dialog.show()
         }
 
     }
