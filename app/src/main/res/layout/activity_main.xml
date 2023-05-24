@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -12,21 +12,16 @@
         android:id="@+id/fragfrem"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal">
+        android:layout_marginBottom="80dp"
+        android:orientation="horizontal"/>
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/BNV"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
             android:background="@color/white"
-            app:menu="@menu/bottom_nav_view" />
-        <androidx.viewpager.widget.ViewPager
-            android:id="@+id/VPWA"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"/>
+            app:menu="@menu/bottom_nav_view"
+            android:layout_alignParentBottom="true"/>
 
-    </FrameLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

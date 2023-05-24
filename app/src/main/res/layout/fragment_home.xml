@@ -62,11 +62,37 @@
                 android:src="@drawable/baseline_keyboard_arrow_down_24" />
         </LinearLayout>
     </LinearLayout>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center|top"
+    android:layout_marginTop="10dp"
+    android:gravity="top|center"
+    android:background="#6260A0"
+    android:orientation="vertical">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:text="Total"
+        android:textColor="@color/white"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        android:gravity="center|bottom"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:id="@+id/allover"
+        android:text="0"
+        android:textColor="@color/white"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:gravity="center|top"/>
+</LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:paddingLeft="16dp">
 
         <LinearLayout
@@ -88,6 +114,7 @@
                     android:text="Income" />
 
                 <TextView
+                    android:id="@+id/txtIncome"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="0"
@@ -105,9 +132,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:background="@drawable/inc_exp_bg"
+                    android:background="@drawable/ex_in_bg"
                     android:padding="5dp"
-                    android:src="@drawable/baseline_call_received_24" />
+                    android:src="@drawable/all_received" />
             </LinearLayout>
         </LinearLayout>
 
@@ -130,10 +157,11 @@
                     android:text="Expense" />
 
                 <TextView
+                    android:id="@+id/txtExpense"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="0"
-                    android:textColor="@color/black"
+                    android:textColor="#F30C0C"
                     android:textStyle="bold" />
             </LinearLayout>
 
@@ -183,12 +211,14 @@
                 android:text="History" />
         </LinearLayout>
     </LinearLayout>
-
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rcvTransList"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingLeft="16dp" />
-
+</LinearLayout>
 
 </LinearLayout>
