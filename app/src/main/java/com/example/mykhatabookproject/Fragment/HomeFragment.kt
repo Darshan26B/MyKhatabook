@@ -25,7 +25,7 @@ class HomeFragment : Fragment() {
     var transList=ArrayList<TransModel>()
     lateinit var dbhelper:DBHelper
     lateinit var binding: FragmentHomeBinding
-    var isExpense = 0
+
     lateinit var adapter:TransListAdapter
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -38,19 +38,20 @@ class HomeFragment : Fragment() {
         }
         binding = FragmentHomeBinding.inflate(layoutInflater)
 
+        var date=Date()
+        var Format=SimpleDateFormat("dd/MM/YYYY")
+        var currentDate=Format.format(date)
 
+        var dates=currentDate.split("/")
+        binding.txtDate.text=currentDate
         binding.txtDate.setOnClickListener {
-            var date=Date()
-            var Format=SimpleDateFormat("dd/MM/YYYY")
-            var currentDate=Format.format(date)
 
-            var dates=currentDate.split("/")
-            binding.txtDate.text=currentDate
 
             var  dialog = DatePickerDialog(requireContext(), object : DatePickerDialog.OnDateSetListener{
-                override fun onDateSet(view: DatePicker?, year: Int, month: Int, dayOfMonth: Int) {
+                override fun onDateSet(view: DatePicker?, year: Int, month: Int, day: Int) {
 
-                    var selecteDate ="$dayOfMonth/${(month+1)}/$year"
+                    var mo = "0"+(month+1)
+                    var selecteDate ="$day/$mo/$year"
                     binding.txtDate.text=selecteDate
 
                 }
@@ -62,7 +63,6 @@ class HomeFragment : Fragment() {
         transList=dbhelper.getTrans()
         UpdateTotal(transList)
 
-        transList= transList.reversed() as ArrayList<TransModel>
 
         adapter= TransListAdapter({
 
@@ -86,10 +86,8 @@ class HomeFragment : Fragment() {
             .setPositiveButton("yes", object : DialogInterface.OnClickListener {
                 override fun onClick(dialog: DialogInterface?, which: Int) {
                     dbhelper.deleteTrans(it)
-                    adapter.updateData(
-                        dbhelper.getTrans().reversed() as java.util.ArrayList<TransModel>
-                    )
-
+                    adapter.updateData(dbhelper.getTrans())
+                    UpdateTotal(dbhelper.getTrans())
                 }
 
             }).setNegativeButton("No", object : DialogInterface.OnClickListener {
@@ -129,8 +127,11 @@ class HomeFragment : Fragment() {
             var amount=bind.edtAmount.text.toString().toInt()
             var category=bind.edtCategory.text.toString()
             var note=bind.edtNote.text.toString()
+            var isExpense = transList.IsExpense
             var model=TransModel(transList.id,amount,category,note,isExpense)
             dbhelper.updateTrans(model)
+            adapter.updateData(dbhelper.getTrans())
+            UpdateTotal(dbhelper.getTrans())
             dialog.dismiss()
         }
 

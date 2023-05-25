@@ -60,18 +60,20 @@ class AddFragment : Fragment() {
             binding.edtCategory.setText("")
             binding.edtNote.setText("")
         }
-        binding.txtDateAdd.setOnClickListener {
-            var date= Date()
-            var Format= SimpleDateFormat("dd/MM/YYYY")
-            var currentDate=Format.format(date)
+        var date= Date()
+        var Format= SimpleDateFormat("dd/MM/YYYY")
+        var currentDate=Format.format(date)
 
-            var dates=currentDate.split("/")
-            binding.txtDateAdd.text=currentDate
+        var dates=currentDate.split("/")
+        binding.txtDateAdd.text=currentDate
+        binding.txtDateAdd.setOnClickListener {
+
 
             var  dialog = DatePickerDialog(requireContext(), object : DatePickerDialog.OnDateSetListener{
                 override fun onDateSet(view: DatePicker?, year: Int, month: Int, day: Int) {
 
-                    var selecteDate ="$day/${(month+1)}/$year"
+                    var mo = "0"+(month+1)
+                    var selecteDate ="$day/$mo/$year"
                     binding.txtDateAdd.text=selecteDate
 
                 }
