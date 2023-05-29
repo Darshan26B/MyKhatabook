@@ -112,7 +112,7 @@
                     android:layout_gravity="center"
                     android:background="@drawable/ex_in_bg"
                     android:padding="5dp"
-                    android:src="@drawable/all_received" />
+                    android:src="@drawable/baseline_call_made_24" />
             </LinearLayout>
         </LinearLayout>
 
@@ -156,7 +156,7 @@
                     android:layout_gravity="center"
                     android:background="@drawable/ex_in_bg"
                     android:padding="5dp"
-                    android:src="@drawable/baseline_call_made_24" />
+                    android:src="@drawable/all_received" />
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>

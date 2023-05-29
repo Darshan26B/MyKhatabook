@@ -19,7 +19,6 @@ class MainActivity : AppCompatActivity() {
             when(it.itemId) {
                 R.id.Home ->loadFragment(HomeFragment())
                 R.id.add ->loadFragment(AddFragment())
-                R.id.Stats ->loadFragment(StatsFragment())
 
                 else->{
 
