@@ -17,15 +17,17 @@
             android:id="@+id/CardIncome"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:cardBackgroundColor="#FF9E80"
+            app:cardBackgroundColor="#05BFDB"
             app:cardUseCompatPadding="true"
             android:layout_marginRight="20dp"
             app:cardCornerRadius="10dp">
 
             <TextView
+                android:id="@+id/Income"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="6"
+                android:textColor="@color/white"
                 android:textSize="16dp"
                 android:padding="5dp"
                 android:gravity="center"
@@ -41,11 +43,13 @@
             app:cardCornerRadius="10dp">
 
             <TextView
+                android:id="@+id/Expense"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="6"
                 android:textSize="16dp"
                 android:padding="5dp"
+                android:textColor="@color/black"
                 android:gravity="center"
                 android:text="Expense"/>
 

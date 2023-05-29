@@ -43,8 +43,8 @@ class HomeFragment : Fragment() {
         var currentDate=Format.format(date)
 
         var dates=currentDate.split("/")
-        binding.txtDate.text=currentDate
-        binding.txtDate.setOnClickListener {
+        binding.txtDateAdd.text=currentDate
+        binding.txtDateAdd.setOnClickListener {
 
 
             var  dialog = DatePickerDialog(requireContext(), object : DatePickerDialog.OnDateSetListener{
@@ -52,7 +52,7 @@ class HomeFragment : Fragment() {
 
                     var mo = "0"+(month+1)
                     var selecteDate ="$day/$mo/$year"
-                    binding.txtDate.text=selecteDate
+                    binding.txtDateAdd.text=selecteDate
 
                 }
 

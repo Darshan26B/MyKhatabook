@@ -1,5 +1,6 @@
 package com.example.mykhatabookproject.Fragment
 
+import android.annotation.SuppressLint
 import android.app.DatePickerDialog
 import android.content.Context
 import android.graphics.Color
@@ -36,17 +37,22 @@ class AddFragment : Fragment() {
         return binding.root
     }
 
+    @SuppressLint("ResourceType")
     private fun initView() {
 
         binding.CardIncome.setOnClickListener {
             isExpense=0
-            binding.CardIncome.setCardBackgroundColor(Color.parseColor("#FF9E80"))
+            binding.CardIncome.setCardBackgroundColor(Color.parseColor("#05BFDB"))
             binding.CardExpense.setCardBackgroundColor(Color.parseColor("#FFFFFF"))
+            binding.Income.setTextColor(Color.parseColor("#FFFFFF"))
+            binding.Expense.setTextColor(Color.parseColor("#000000"))
         }
         binding.CardExpense.setOnClickListener {
             isExpense=1
             binding.CardIncome.setCardBackgroundColor(Color.parseColor("#FFFFFF"))
-            binding.CardExpense.setCardBackgroundColor(Color.parseColor("#FF9E80"))
+            binding.CardExpense.setCardBackgroundColor(Color.parseColor("#05BFDB"))
+            binding.Expense.setTextColor(Color.parseColor("#FFFFFF"))
+            binding.Income.setTextColor(Color.parseColor("#000000"))
         }
 
 

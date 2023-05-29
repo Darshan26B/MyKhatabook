@@ -5,7 +5,6 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import com.example.mykhatabookproject.Fragment.AddFragment
 import com.example.mykhatabookproject.Fragment.HomeFragment
-import com.example.mykhatabookproject.Fragment.StatsFragment
 import com.example.mykhatabookproject.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
